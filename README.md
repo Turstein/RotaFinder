@@ -32,11 +32,11 @@ Summary file "blast_rotavar.csv" with the conclusions for all samples. If a gene
 
 # NGS Bioinformatics Pipeline
 
-This is the pipeline used for our NGS processing:
+
 
 ```mermaid
 graph TD;
-    Trimmomatic["Trimmomatic (Quality Control)"];
+    Trimmomatic["Trimmomatic (Adapter trimming and Quality Control)"];
 
     BBNorm_Spades1["BBnorm (100x) + rnaViralSPAdes"];
     BBNorm_Spades2["BBnorm (500x) + rnaViralSPAdes"];
@@ -45,7 +45,7 @@ graph TD;
 
     VIGOR4["VIGOR4 (Annotation)"];
     BLAST["BLAST"];
-    Report["Extract genotype and percentage similarity, apply cut-off"];
+    Report["REPORT"];
 
     Trimmomatic --> BBNorm_Spades1;
     Trimmomatic --> BBNorm_Spades2;
@@ -57,6 +57,6 @@ graph TD;
     RNAviralSPAdes --> VIGOR4;
     SPAdes --> VIGOR4;
 
-    VIGOR4 --> |"Best Sequence Per Segment"| BLAST;
+    VIGOR4 --> |"Sort and extract ORF"| BLAST;
 
-    BLAST --> Report;
+    BLAST --> |"Extract genotype and percentage similarity, apply cut-off"|  Report;
