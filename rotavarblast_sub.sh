@@ -1,6 +1,6 @@
 #!/bin/bash
 source ~/miniconda3/etc/profile.d/conda.sh
-conda activate rotavar
+conda activate rotafinder
 # Get the directory of the current script
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
