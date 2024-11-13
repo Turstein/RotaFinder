@@ -59,4 +59,4 @@ graph TD;
 
     VIGOR4 --> |"Sort and extract ORF"| BLAST;
 
-    BLAST --> |"Extract genotype and percentage similarity, apply cut-off"|  Report;
+    BLAST --> |"Extract genotype and percentage similarity, apply cut-off"| Report;
