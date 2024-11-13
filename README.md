@@ -36,7 +36,7 @@ Summary file "blast_rotavar.csv" with the conclusions for all samples. If a gene
 
 ```mermaid
 graph TD;
-    Trimmomatic["Trimmomatic (Adapter trimming and Quality Control)"];
+    Trimmomatic["Trimmomatic (Adapter Trimming and Quality Control)"];
 
     BBNorm_Spades1["BBnorm (100x) + rnaViralSPAdes"];
     BBNorm_Spades2["BBnorm (500x) + rnaViralSPAdes"];
