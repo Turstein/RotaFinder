@@ -90,7 +90,7 @@ for dir in */ ; do
   if ! docker run -u "$(id -u)":"$(id -g)" -v "$(pwd)":/working_dir -w /working_dir -m 64g --cpus="8" vigor4 bash -c "/home/vigor4/vigor4/bin/vigor4 -i contigs500.fasta -o vigor4 -d rtva"; then
     echo "Vigor4 failed in $folder_name" >> $LOG_FILE
     cd ..
-    continue
+    exit
   fi
   set +e
 
