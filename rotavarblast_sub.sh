@@ -31,7 +31,7 @@ rm R1bbnorm.fastq.gz
 rm R1bbnorm2.fastq.gz
 rm R2bbnorm.fastq.gz
 rm R2bbnorm2.fastq.gz
-rm R1_paired.fastq.gz
+#rm R1_paired.fastq.gz
 rm R1_unpaired.fastq.gz
-rm R2_paired.fastq.gz
+#rm R2_paired.fastq.gz
 rm R2_unpaired.fastq.gz

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Activate the initial conda environment
-source /home/torstein.gjolgali.frengen/miniconda3/etc/profile.d/conda.sh
+source ~/miniconda3/etc/profile.d/conda.sh
 #source ~/miniconda3/etc/profile.d/conda.sh
 conda activate rotafinder
 # Get the directory of the script
