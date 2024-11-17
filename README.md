@@ -1,5 +1,6 @@
 # RotaFinder
 ## About
+WARNING: The pipeline is currently being validated for P and G-typing. May be prone to errors, escpecially for other than G/P-typing.
 
 This is a pipeline for genotyping Rotavirus A from Illumina MiSeq raw data. SPAdes is run with several parameters and relevant contigs is identified by VIGOR4. Genotyping is performed by blast and local database. Cutoffs are applied as described by https://pubmed.ncbi.nlm.nih.gov/18604469/ 
 
