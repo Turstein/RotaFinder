@@ -7,15 +7,17 @@ conda activate rotafinder
 # Get the directory of the script
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-cat output_VP1.fasta output_VP2.fasta output_VP3.fasta output_VP4.fasta output_VP6.fasta output_VP7.fasta output_NSP1.fasta output_NSP2.fasta output_NSP3.fasta output_NSP4.fasta output_NSP5.fasta > contigs_rota.fasta
+#cat output_VP1.fasta output_VP2.fasta output_VP3.fasta output_VP4.fasta output_VP6.fasta output_VP7.fasta output_NSP1.fasta output_NSP2.fasta output_NSP3.fasta output_NSP4.fasta output_NSP5.fasta > contigs_rota.fasta
+
+python3 "$SCRIPT_DIR/covfilter.py"
 
 # Set the minimum sequence length to be considered (adjust if necessary)
 MIN_SEQ_LENGTH=500
 
 # Input and output files
-INPUT_FASTA="contigs_rota.fasta"
+INPUT_FASTA="contigs500_COV.fasta"
 BLAST_DB="$SCRIPT_DIR/241118_rotadb"
-BLAST_OUTPUT="blast_rota.txt"
+BLAST_OUTPUT="blast_rota2.txt"
 
 
 
@@ -37,6 +39,6 @@ if [ ! -f "$BLAST_OUTPUT" ]; then
     exit 1
 fi
 
-python3 "$SCRIPT_DIR/evaluate.py"
-python3 "$SCRIPT_DIR/summarize.py"
-python3 "$SCRIPT_DIR/genotype.py"
+python3 "$SCRIPT_DIR/evaluate2.py"
+python3 "$SCRIPT_DIR/summarize2.py"
+python3 "$SCRIPT_DIR/genotype3.py"
