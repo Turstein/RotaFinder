@@ -6,16 +6,10 @@ This is a pipeline for genotyping Rotavirus A from Illumina MiSeq raw data. SPAd
 
 ## Install
 
-You will need docker and conda. Dependencies are described in env.yaml and can be installed with 
+You will need conda. Dependencies are described in env.yaml and can be installed with 
 
 ```
 conda env create -f env.yaml
-```
-
-The docker container can be built can be built from the provided directory "vigor4" with:
-
-```
-docker build -t vigor4 .
 ```
 
 
@@ -29,7 +23,7 @@ bash path\to\RotaFinder.sh
 
 ## Output
 
-Summary file "blast_rotavar.csv" with the conclusions for all samples. If a gene is not found or several genotypes of one gene is found, there will be a "?" instead of a number. The column "Extra Information" will contain genotypes if more than one is detected. More details are provided in the sample folders, including the fasta sequences after deNovo assembly. 
+Summary file "blast_rotavar.csv" with the conclusions for all samples. If a gene is not found the genotype will be "X". If several genotypes of one gene is found in the same sample the script will output the one with the most full sequences. If a tie, there will be "?" instead of a number. The column "Extra Information" will contain information about genotypes if more than one is detected. More details are generated in the sample folders, including fasta sequences after deNovo assembly. 
 
 # NGS Bioinformatics Pipeline
 

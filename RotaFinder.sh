@@ -86,33 +86,33 @@ for dir in */ ; do
   fi
 
   # Run Vigor4 using Docker
-  set -e
-  if ! docker run -u "$(id -u)":"$(id -g)" -v "$(pwd)":/working_dir -w /working_dir -m 64g --cpus="8" vigor4 bash -c "/home/vigor4/vigor4/bin/vigor4 -i contigs500.fasta -o vigor4 -d rtva"; then
-    echo "Vigor4 failed in $folder_name" >> $LOG_FILE
-    cd ..
-    exit
-  fi
-  set +e
+  #set -e
+  #if ! docker run -u "$(id -u)":"$(id -g)" -v "$(pwd)":/working_dir -w /working_dir -m 64g --cpus="8" vigor4 bash -c "/home/vigor4/vigor4/bin/vigor4 -i contigs500.fasta -o vigor4 -d rtva"; then
+  #  echo "Vigor4 failed in $folder_name" >> $LOG_FILE
+  #  cd ..
+  #  exit
+  #fi
+  #set +e
 
   # Run additional scripts
-  if ! bash "$SCRIPT_DIR/rotavarblast_sub.sh"; then
-    echo "rotavarblast_sub.sh failed in $folder_name" >> $LOG_FILE
-    cd ..
-    continue
-  fi
+  #if ! bash "$SCRIPT_DIR/rotavarblast_sub.sh"; then
+  #  echo "rotavarblast_sub.sh failed in $folder_name" >> $LOG_FILE
+  #  cd ..
+  #  continue
+  #fi
   
-  if ! bash "$SCRIPT_DIR/rotablast.sh"; then
+  if ! bash "$SCRIPT_DIR/rotablast2.sh"; then
     echo "rotablast.sh failed in $folder_name" >> $LOG_FILE
   fi
 
   cd ..
 done
 
-output_file="blast_rotavar.csv"
+output_file="blast_rotavar3.csv"
 first_file=true
 
 for dir in */; do
-  file_path="${dir}blast_rota_genotyping.csv"
+  file_path="${dir}blast_rota_genotyping3.csv"
   if [[ -f "$file_path" ]]; then
     if $first_file; then
       cat "$file_path" > "$output_file"
