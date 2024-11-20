@@ -38,7 +38,7 @@ graph TD;
     SPAdes["SPAdes --isolate"];
 
     BLAST["BLAST"];
-    REDUCE["Discard contigs with k-mer coverage <= 4, and length <= 500"];
+    REDUCE["Discard contigs with k-mer coverage <= 3, and length <= 500"];
     Report["REPORT"];
 
     Trimmomatic --> BBNorm_Spades1;
