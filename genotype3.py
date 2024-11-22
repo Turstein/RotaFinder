@@ -3,7 +3,7 @@ import os
 
 # Input and output files
 input_file = "blast_rota_results2.csv"
-output_file = "blast_rota_genotyping3.csv"
+output_file = "blast_rota_genotyping4.csv"
 
 # List of gene letters in desired order
 gene_order = ['G', 'P', 'I', 'R', 'C', 'M', 'A', 'N', 'T', 'E', 'H']

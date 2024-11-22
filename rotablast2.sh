@@ -16,7 +16,7 @@ MIN_SEQ_LENGTH=500
 
 # Input and output files
 INPUT_FASTA="contigs500_COV.fasta"
-BLAST_DB="$SCRIPT_DIR/241118_rotadb"
+BLAST_DB="$SCRIPT_DIR/241121_rotadb"
 BLAST_OUTPUT="blast_rota2.txt"
 
 
@@ -42,3 +42,4 @@ fi
 python3 "$SCRIPT_DIR/evaluate2.py"
 python3 "$SCRIPT_DIR/summarize2.py"
 python3 "$SCRIPT_DIR/genotype3.py"
+python3 "$SCRIPT_DIR/update_blast_data.py"

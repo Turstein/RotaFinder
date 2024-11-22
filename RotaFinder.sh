@@ -108,11 +108,11 @@ for dir in */ ; do
   cd ..
 done
 
-output_file="blast_rotavar3.csv"
+output_file="blast_rotavar4.csv"
 first_file=true
 
 for dir in */; do
-  file_path="${dir}blast_rota_genotyping3.csv"
+  file_path="${dir}blast_rota_genotyping4_updated.csv"
   if [[ -f "$file_path" ]]; then
     if $first_file; then
       cat "$file_path" > "$output_file"

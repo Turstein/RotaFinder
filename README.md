@@ -23,7 +23,7 @@ bash path\to\RotaFinder.sh
 
 ## Output
 
-Summary file "blast_rotavar.csv" with the conclusions for all samples. If a gene is not found the genotype will be "X". If several genotypes of one gene is found in the same sample the script will output the one with the most full sequences. If a tie, there will be "?" instead of a number. The column "Extra Information" will contain information about genotypes if more than one is detected. More details are generated in the sample folders, including fasta sequences after deNovo assembly. 
+Summary file "blast_rotavar4.csv" with the conclusions for all samples. If a gene is not found the genotype will be "X". If several genotypes of one gene is found in the same sample the script will output the one with the most full sequences. If a tie, there will be "?" instead of a number. The column "Extra Information" will contain information about genotypes if more than one is detected. If closest reference is >G1|LC822561.1/Vaccine/USA/RIX4414/1988 and/or >P8|LC822559.1/Vaccine/USA/RIX4414/1988 the output will also include percentage similarity to reference. More details are generated in the sample folders, including fasta sequences after deNovo assembly. 
 
 # NGS Bioinformatics Pipeline
 
