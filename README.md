@@ -2,7 +2,7 @@
 ## About
 WARNING: This command line tool for genotyping of Rotavirus A is currently being validated for G and P-typing. It may be prone to errors, escpecially for other than G/P-typing.
 
-This is a pipeline for genotyping Rotavirus A from Illumina MiSeq raw data. SPAdes is run with several parameters and relevant contigs is identified by VIGOR4. Genotyping is performed by blast and local database. Cutoffs are applied as described by https://pubmed.ncbi.nlm.nih.gov/18604469/ 
+This is a pipeline for genotyping Rotavirus A from Illumina MiSeq raw data. SPAdes is run with several parameters and contigs with length above 500 and coverage above 3 are considered. Genotyping is performed by blast and local database. Cutoffs are applied as described by https://pubmed.ncbi.nlm.nih.gov/18604469/. 
 
 ## Install
 
@@ -32,6 +32,7 @@ Summary file "blast_rotavar4.csv" with the conclusions for all samples. If a gen
 graph TD;
     Trimmomatic["Trimmomatic (Adapter Trimming and Quality Control)"];
 
+    Clumpify_Spades["Deduplicate with Clumpify + rnaViralSPAdes"];
     BBNorm_Spades1["BBnorm (100x) + rnaViralSPAdes"];
     BBNorm_Spades2["BBnorm (500x) + rnaViralSPAdes"];
     RNAviralSPAdes["RNAviralSPAdes"];
@@ -41,11 +42,13 @@ graph TD;
     REDUCE["Discard contigs with k-mer coverage <= 3, and length <= 500"];
     Report["REPORT"];
 
+    Trimmomatic --> Clumpify_Spades;
     Trimmomatic --> BBNorm_Spades1;
     Trimmomatic --> BBNorm_Spades2;
     Trimmomatic --> RNAviralSPAdes;
     Trimmomatic --> SPAdes;
 
+    Clumpify_Spades --> REDUCE;
     BBNorm_Spades1 --> REDUCE;
     BBNorm_Spades2 --> REDUCE;
     RNAviralSPAdes --> REDUCE;

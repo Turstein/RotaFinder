@@ -5,7 +5,8 @@ folder_text = {
     'work1': '_bbnorm100rnaviralspades',
     'work2': '_bbnorm500rnaviralspades',
     'work3': '_rnaviralspades',
-    'work6': '_spadesIsolateAutocutoff'
+    'work6': '_spadesIsolateAutocutoff',
+    'work7': '_clumpifyrnaviralspades'
 }
 
 output_file = 'contigs.fasta'

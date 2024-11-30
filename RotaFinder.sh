@@ -31,6 +31,13 @@ for dir in */ ; do
     continue
   fi
 
+  # Run Clumpify (deduplicate)
+  if ! clumpify.sh in1=R1_paired.fastq.gz in2=R2_paired.fastq.gz out1=deduped_R1.fastq.gz out2=deduped_R2.fastq.gz dedupe; then
+    echo "Clumpify failed in $folder_name, skipping folder." >> $LOG_FILE
+    cd ..
+    continue
+  fi
+
   # Run BBnorm (target 100)
   if ! bbnorm.sh in1=R1_paired.fastq.gz in2=R2_paired.fastq.gz out1=R1bbnorm.fastq.gz out2=R2bbnorm.fastq.gz target=100 min=5; then
     echo "BBnorm (target=100) failed in $folder_name, skipping folder." >> $LOG_FILE
@@ -76,6 +83,16 @@ for dir in */ ; do
     fi
   else
     echo "Paired files are empty in $folder_name, skipping rnaviralspades.py work3 and SPAdes work6." >> $LOG_FILE
+  fi
+
+  # Check if clumpify output files are empty
+  if [[ ! -s deduped_R1.fastq.gz || ! -s deduped_R2.fastq.gz ]]; then
+    echo "Clumpify output files are empty in $folder_name, skipping running rnaviralspades.py work7." >> $LOG_FILE
+  else
+    # Run RNAviralSPAdes (Work7)
+    if ! rnaviralspades.py -t 12 -1 deduped_R1.fastq.gz -2 deduped_R2.fastq.gz -o work7; then
+      echo "rnaviralspades.py (work7) failed in $folder_name" >> $LOG_FILE
+    fi
   fi
 
   # Run CollectFasta.py
