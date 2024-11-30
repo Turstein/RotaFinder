@@ -16,7 +16,7 @@ MIN_SEQ_LENGTH=500
 
 # Input and output files
 INPUT_FASTA="contigs500_COV.fasta"
-BLAST_DB="$SCRIPT_DIR/241121_rotadb"
+BLAST_DB="$SCRIPT_DIR/241130_rotadb"
 BLAST_OUTPUT="blast_rota2.txt"
 
 
