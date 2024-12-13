@@ -38,7 +38,7 @@ graph TD;
     RNAviralSPAdes["RNAviralSPAdes"];
     SPAdes["SPAdes --isolate"];
 
-    BLAST["BLAST"];
+    BLAST["BLAST against reference sequences"];
     REDUCE["Discard contigs with k-mer coverage <= 3, and length <= 500"];
     Report["REPORT"];
 
