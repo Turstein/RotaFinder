@@ -1,6 +1,6 @@
 # RotaFinder
 ## About
-WARNING: This command line tool for genotyping of Rotavirus A is currently being validated for G and P-typing. It may be prone to errors, escpecially for other than G/P-typing.
+WARNING: This command line tool for genotyping of Rotavirus A is currently being validated for G and P-typing. It may be prone to errors, escpecially for other than G/P-typing. 
 
 This is a pipeline for genotyping Rotavirus A from Illumina MiSeq raw data. SPAdes is run with several parameters and contigs with length above 500 and coverage above 3 are considered. Genotyping is performed by blast and local database. Cutoffs are applied as described by https://pubmed.ncbi.nlm.nih.gov/18604469/. 
 
