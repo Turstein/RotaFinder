@@ -1,6 +1,6 @@
 import csv, re
 
-with open('blast_rotavar4.csv', newline='') as infile, open('Labware.csv', 'w', newline='') as outfile:
+with open('blast_rotavar4.csv', newline='') as infile, open('LabwareReportFromRotaFinder1.csv', 'w', newline='') as outfile:
     reader = csv.DictReader(infile)
     fieldnames = reader.fieldnames + ['LabwareGenotype', 'Art']
     writer = csv.DictWriter(outfile, fieldnames=fieldnames)
