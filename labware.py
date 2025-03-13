@@ -11,12 +11,13 @@ with open('blast_rotavar4.csv', newline='') as infile, open('LabwareReportFromRo
         labware = '-'.join(parts[:2]) if len(parts) >= 2 else genotype
         row['LabwareGenotype'] = labware
 
-        art = ""
+        # Default to "Utilstrekkelig sekvens"
+        art = "Utilstrekkelig sekvens"
         if '-' in labware:
             g_part, p_part = labware.split('-', 1)
-            # Check if G is followed by a number.
+            # Check if g_part starts with 'G' followed by digits
             if re.fullmatch(r'G\d+', g_part):
-                # P can be either P followed by digits or P[digits]
+                # p_part should be 'P' followed by digits or P[digit(s)] in square brackets
                 if re.fullmatch(r'P\d+', p_part) or re.fullmatch(r'P\[\d+\]', p_part):
                     art = "Rotavirus alphagastroenteritidis"
         row['Art'] = art
