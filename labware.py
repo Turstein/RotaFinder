@@ -12,13 +12,13 @@ with open('blast_rotavar4.csv', newline='') as infile, open('LabwareReportFromRo
         row['LabwareGenotype'] = labware
 
         # Default to "Utilstrekkelig sekvens"
-        art = "Utilstrekkelig sekvens"
+        art = "UTILSTRSEKV"
         if '-' in labware:
             g_part, p_part = labware.split('-', 1)
             # Check if g_part starts with 'G' followed by digits
             if re.fullmatch(r'G\d+', g_part):
                 # p_part should be 'P' followed by digits or P[digit(s)] in square brackets
                 if re.fullmatch(r'P\d+', p_part) or re.fullmatch(r'P\[\d+\]', p_part):
-                    art = "Rotavirus alphagastroenteritidis"
+                    art = "ROV"
         row['Art'] = art
         writer.writerow(row)
