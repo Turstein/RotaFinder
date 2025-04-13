@@ -44,6 +44,7 @@ python3 "$SCRIPT_DIR/summarize3.py"
 python3 "$SCRIPT_DIR/genotype4.py"
 python3 "$SCRIPT_DIR/update_blast_data.py"
 python3 "$SCRIPT_DIR/selected_contigs.py"
+python3 "$SCRIPT_DIR/selected_ORFs.py"
 
 rm -r work1
 rm -r work2
@@ -60,3 +61,5 @@ rm R2_paired.fastq.gz
 rm R2_unpaired.fastq.gz
 rm deduped_R1.fastq.gz
 rm deduped_R2.fastq.gz
+rm blast_rota_genotyping4.csv
+rm blast_rota2.txt
