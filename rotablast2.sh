@@ -43,6 +43,7 @@ python3 "$SCRIPT_DIR/evaluate2.py"
 python3 "$SCRIPT_DIR/summarize3.py"
 python3 "$SCRIPT_DIR/genotype4.py"
 python3 "$SCRIPT_DIR/update_blast_data.py"
+python3 "$SCRIPT_DIR/selected_contigs.py"
 
 rm -r work1
 rm -r work2

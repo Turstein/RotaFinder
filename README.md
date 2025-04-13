@@ -2,7 +2,9 @@
 ## About
 WARNING: This command line tool for genotyping of Rotavirus A is currently being validated for G and P-typing. It may be prone to errors, escpecially for other than G/P-typing. 
 
-This is a pipeline for genotyping Rotavirus A from Illumina MiSeq raw data. SPAdes is run with several parameters and contigs with length above 500 and coverage above 3 are considered. Genotyping is performed by blast and local database. Cutoffs are applied as described by https://pubmed.ncbi.nlm.nih.gov/18604469/. 
+This is a pipeline for genotyping Rotavirus A from Illumina data. 
+
+SPAdes is run with several parameters and contigs with length above 500 and coverage above 3 are considered. Genotyping is performed by blast and local database. Cutoffs are applied as described by https://pubmed.ncbi.nlm.nih.gov/18604469/. 
 
 ## Install
 
@@ -25,7 +27,7 @@ bash path\to\RotaFinder.sh
 
 Summary file "Labware.csv" with the conclusions for all samples. If a gene is not found the genotype will be "X". If several genotypes of one gene is found in the same sample the script will output the one with the most full sequences. If a tie, there will be "?" instead of a number. The column "Extra Information" will contain information about genotypes if more than one is detected. If closest reference is >G1|LC822561.1/Vaccine/USA/RIX4414/1988 and/or >P8|LC822559.1/Vaccine/USA/RIX4414/1988 the output will also include percentage similarity to reference. More details are generated in the sample folders, including fasta sequences after deNovo assembly. 
 
-The validated version of the script is version 1 (see releases). The main repo contains updates.
+The validated version of the script (G and P-typing) is version 1 (see releases). The main repo contains updates.
 
 # NGS Bioinformatics Pipeline
 
