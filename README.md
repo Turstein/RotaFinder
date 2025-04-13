@@ -25,7 +25,22 @@ bash path\to\RotaFinder.sh
 
 ## Output
 
-Summary file "Labware.csv" with the conclusions for all samples. If a gene is not found the genotype will be "X". If several genotypes of one gene is found in the same sample the script will output the one with the most full sequences. If a tie, there will be "?" instead of a number. The column "Extra Information" will contain information about genotypes if more than one is detected. If closest reference is >G1|LC822561.1/Vaccine/USA/RIX4414/1988 and/or >P8|LC822559.1/Vaccine/USA/RIX4414/1988 the output will also include percentage similarity to reference. More details are generated in the sample folders, including fasta sequences after deNovo assembly. 
+Files left after running the pipeline:
+
+In the main directory the pipeline is run from: 
+*Summary file "Labware.csv" with the conclusions for all samples. If a gene is not found the genotype will be "X". If several genotypes of one gene is found in the same sample the script will output the one with the most full sequences. If a tie, there will be "?" instead of a number. The column "Extra Information" will contain information about genotypes if more than one is detected. If closest reference is >G1|LC822561.1/Vaccine/USA/RIX4414/1988 and/or >P8|LC822559.1/Vaccine/USA/RIX4414/1988 the output will also include percentage similarity to reference. 
+
+More details are generated in the sample folders:
+*contigs.fasta, all contigs from SPAdes de novo assembly
+*contigs500.fasta, all contigs longer than 500 bp
+*contigs500_COV, all contigs above cutoff coverage
+*selected_contigs.fasta, just one selected contig per detected genotype
+*selected_ORFs.fasta, the same selected congtigs, but just the open reading frame, these are reverse complemented when necessary. 
+*blast_rota2.csv, blast results on contigs500_COV and an evaluation (genotype vs. not accepted (too short). Be aware that if the sequence length is acceptable, but the percentage identity is below cutoff this will appear as closest genotype followed by "0000" and percentage identity. This is not a genotype and the sequence should be checked.
+*blast_rota_results2.csv, count of full and partial contigs with high or low coverage, this will be the basis of defining genotype. Genotypes present in lower depth or partial sequence will be reported as "extra information" in the final results
+*blast_rota_genotyping4_updated.csv, final results. This will also include percentage similarity to rotarix vaccine strain (G/P) if this strain is the closest match from blast. 
+
+Be aware that if the sequence length is acceptable, but the percentage identity is below cutoff this will appear as closest genotype followed by "0000" and percentage identity. This is not a genotype and the sequence should be checked.
 
 The validated version of the script (G and P-typing) is version 1 (see releases). The main repo contains updates.
 

@@ -39,7 +39,7 @@ if [ ! -f "$BLAST_OUTPUT" ]; then
     exit 1
 fi
 
-python3 "$SCRIPT_DIR/evaluate2.py"
+python3 "$SCRIPT_DIR/evaluate3.py"
 python3 "$SCRIPT_DIR/summarize3.py"
 python3 "$SCRIPT_DIR/genotype4.py"
 python3 "$SCRIPT_DIR/update_blast_data.py"
