@@ -46,6 +46,8 @@ python3 "$SCRIPT_DIR/update_blast_data.py"
 python3 "$SCRIPT_DIR/selected_contigs.py"
 python3 "$SCRIPT_DIR/selected_ORFs.py"
 
+blastn -query selected_ORFs.fasta -db "$SCRIPT_DIR/hostdb/hostdatabase250412" -out hostcomparison.csv -outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore sstrand slen" -max_target_seqs 1 -strand both
+
 rm -r work1
 rm -r work2
 rm -r work3

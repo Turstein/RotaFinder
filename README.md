@@ -39,6 +39,7 @@ More details are generated in the sample folders:
 *blast_rota2.csv, blast results on contigs500_COV and an evaluation (genotype vs. not accepted (too short). Be aware that if the sequence length is acceptable, but the percentage identity is below cutoff this will appear as closest genotype followed by "0000" and percentage identity. This is not a genotype and the sequence should be checked.
 *blast_rota_results2.csv, count of full and partial contigs with high or low coverage, this will be the basis of defining genotype. Genotypes present in lower depth or partial sequence will be reported as "extra information" in the final results
 *blast_rota_genotyping4_updated.csv, final results. This will also include percentage similarity to rotarix vaccine strain (G/P) if this strain is the closest match from blast. 
+*hostcomparison.csv, the sequences from selected_ORFs will be blasted against the hostdatabase and this file will hold the closest hits.
 
 Be aware that if the sequence length is acceptable, but the percentage identity is below cutoff this will appear as closest genotype followed by "0000" and percentage identity. This is not a genotype and the sequence should be checked.
 
