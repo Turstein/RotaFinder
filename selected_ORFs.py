@@ -140,7 +140,7 @@ with open(output_fasta, 'w') as outfile:
         orf_seq = full_seq[qstart-1:qend]
         
         # Reverse-complement if sstrand is '-' (ignoring extra spaces)
-        if candidate['sstrand'].strip() == '-':
+        if candidate['sstrand'].strip() == 'minus':
             orf_seq = reverse_complement(orf_seq)
         
         # Create a new header:
