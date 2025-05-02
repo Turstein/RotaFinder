@@ -19,6 +19,6 @@ with open('blast_rotavar4.csv', newline='') as infile, open('LabwareReportFromRo
             if re.fullmatch(r'G\d+', g_part):
                 # p_part should be 'P' followed by digits or P[digit(s)] in square brackets
                 if re.fullmatch(r'P\d+', p_part) or re.fullmatch(r'P\[\d+\]', p_part):
-                    art = "ROV"
+                    art = "RVA"
         row['Art'] = art
         writer.writerow(row)
